@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Chúc Tặng Nhàn (20/10)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet">
+    <style>
+        /* CSS giữ nguyên như bản gốc */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #fff6f6, #ffe4e1);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #ffd6e0;
+            flex-wrap: wrap;
+        }
+
+        header .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #fff;
+            background: #ff9aa2;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        header h1 {
+            font-size: 1.6rem;
+            color: #222;
+        }
+
+        header .lead {
+            font-size: 0.9rem;
+            color: #bfa6c1;
+        }
+
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 16px;
+            gap: 16px;
+            position: relative;
+        }
+
+        .left {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+        }
+
+        .stage-card {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 24px rgba(0, 0, 0, .1);
+            padding: 18px;
+            position: relative;
+        }
+
+        .heart-btn {
+            font-size: 32px;
+            cursor: pointer;
+            animation: pulse 1.2s infinite;
+            user-select: none;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        .btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 16px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all .3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+        }
+
+        .btn.primary {
+            background: #ff9aa2;
+            color: #fff;
+        }
+
+        .btn.ghost {
+            background: #fff;
+            color: #ff9aa2;
+            border: 2px solid #ff9aa2;
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .2);
+        }
+
+        .envelope-wrap {
+            margin-top: 12px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .envelope {
+            width: 180px;
+            height: 120px;
+            position: relative;
+            cursor: pointer;
+            transition: all .8s ease;
+            z-index: 2;
+        }
+
+        .env-flap {
+            width: 100%;
+            height: 60px;
+            background: #ffdede;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 12px 12px 0 0;
+            transform-origin: top;
+            transition: transform .8s ease;
+        }
+
+        .env-body {
+            position: absolute;
+            top: 60px;
+            width: 100%;
+            height: 60px;
+            background: #fff6f6;
+            border-radius: 0 0 12px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .env-letter {
+            padding: 8px;
+            font-size: .9rem;
+            text-align: center;
+            color: #222;
+        }
+
+        .modal-letter {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 90%;
+            max-width: 450px;
+            background: #fff6f6;
+            border-radius: 18px;
+            box-shadow: 0 12px 48px rgba(0, 0, 0, .3);
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: transform .8s cubic-bezier(0.68, -0.55, 0.265, 1.55), opacity .5s;
+        }
+
+        .modal-letter.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .modal-letter img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        .typed {
+            background: rgba(255, 255, 255, .05);
+            border-radius: 10px;
+            padding: 16px;
+            width: 100%;
+            height: 180px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            font-family: 'Pacifico', 'Quicksand', cursive;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #222;
+        }
+
+        .final-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .answer-btn {
+            padding: 12px 22px;
+            border-radius: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .answer-btn.primary {
+            background: #ff9aa2;
+            color: #fff;
+        }
+
+        .answer-btn.ghost {
+            background: #fff;
+            color: #ff9aa2;
+            border: 2px solid #ff9aa2;
+        }
+
+        .answer-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .falling-leaf {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            font-size: 18px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+        }
+
+        .bottom-decoration {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(to top, #ffe4e1, transparent);
+            pointer-events: none;
+        }
+
+        input.answer-input {
+            width: 80%;
+            padding: 10px;
+            margin-top: 12px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+            font-size: 1rem;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.3);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">20</div>
+        <div>
+            <h1>Lời Chúc 20/10 Gửi Tặng Nhàn</h1>
+            <div class="lead">Một chút bất ngờ!</div>
+        </div>
+    </header>
+
+    <div class="main">
+        <div class="left">
+            <div class="stage-card">
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <div id="heartBtn" class="heart-btn">❤️</div>
+                    <div>
+                        <div style="font-weight:800;font-size:18px">Nhấn trái tim để mở thư</div>
+                        <div class="hint">Nhấn để xem lời chúc đặc biệt</div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="openNow" class="btn primary">Mở thư ngay</button>
+                </div>
+                <div class="envelope-wrap">
+                    <div id="envelope" class="envelope">
+                        <div class="env-flap" id="envFlap"></div>
+                        <div class="env-body">
+                            <div class="env-letter">Nhấn trái tim để mở thư chúc mừng 20/10...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-letter" id="modalLetter">
+        <img src="images/anh.jpg" alt="Hình ảnh thư">
+        <div class="typed" id="typedText"></div>
+        <div class="final-buttons">
+            <button class="answer-btn primary" id="btnRead">Đã đọc xong</button>
+            <button class="answer-btn ghost" id="btnSkip">Đóng</button>
+        </div>
+    </div>
+
+    <div class="modal-letter" id="modalQuestion" style="background:#fff6f6;">
+        <div class="typed" id="questionText" style="height:auto;text-align:center;font-weight:600;"></div>
+        <input type="text" placeholder="Nhập câu trả lời ở đây..." class="answer-input" id="answerInput"
+            style="display:none;">
+        <div class="final-buttons" style="margin-top:16px;">
+            <button class="answer-btn primary" id="btnYes" style="display:none;">Có</button>
+            <button class="answer-btn ghost" id="btnNo" style="display:none;">Không</button>
+            <button class="answer-btn primary" id="btnSend" style="display:none;">Gửi</button>
+        </div>
+    </div>
+
+    <audio id="bgMusic" src="music/noinaycoanh.mp3" loop></audio>
+
+    <div class="bottom-decoration"></div>
+
+    <script>
+        // Đã thay đổi: Nội dung thư CHÂN THÀNH, TINH TẾ cho mối quan hệ đang tìm hiểu
+        const message = `Gửi Nhàn,
+        
+Nhân dịp 20/10, Anh gửi lời chúc tốt đẹp nhất đến em. Chúc em luôn vui vẻ, tràn đầy năng lượng, gặp nhiều may mắn và thành công trong công việc.
+
+Anh trân trọng những khoảnh khắc tụi mình đã chia sẻ và những điều tốt đẹp mà em đã mang lại. Hãy cứ là Nhàn nhẹ nhàng, đáng yêu như thế nhé.
+
+Hy vọng những điều tốt đẹp nhất sẽ đến với em!
+
+Thân gửi từ Anh.`;
+
+        function typeWriter(text, el, speed = 24) {
+            el.textContent = '';
+            let i = 0;
+            function step() {
+                if (i < text.length) {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    el.scrollTop = el.scrollHeight;
+                    setTimeout(step, speed);
+                }
+            } step();
+        }
+
+        // envelope open
+        const envelope = document.getElementById('envelope');
+        const flap = document.getElementById('envFlap');
+        const modalLetter = document.getElementById('modalLetter');
+        const typedText = document.getElementById('typedText');
+        const heartBtn = document.getElementById('heartBtn');
+        const openNow = document.getElementById('openNow');
+        const modalQuestion = document.getElementById('modalQuestion');
+        const questionText = document.getElementById('questionText');
+        const answerInput = document.getElementById('answerInput');
+        const btnYes = document.getElementById('btnYes');
+        const btnNo = document.getElementById('btnNo');
+        const btnSend = document.getElementById('btnSend');
+        const bgMusic = document.getElementById('bgMusic');
+        let isOpen = false, yesScale = 1;
+
+        // Đã thay đổi: Câu hỏi phù hợp với mối quan hệ đang tìm hiểu
+        const questions = [
+            { text: "Nhàn thấy lời chúc này có dễ thương không?", type: "yn" },
+            { text: "Nhàn muốn gửi một lời cảm ơn/lời nhắn lại cho Anh không?", type: "input" },
+            { text: "Nhàn có thấy bất ngờ với món quà này không?", type: "yn" },
+            { text: "Gửi một lời chúc lại cho Anh:", type: "input" }
+        ];
+
+        function showQuestion() {
+            const q = questions[Math.floor(Math.random() * questions.length)];
+            questionText.textContent = q.text;
+            answerInput.style.display = q.type === "input" ? "block" : "none";
+            btnSend.style.display = q.type === "input" ? "inline-block" : "none";
+            btnYes.style.display = q.type === "yn" ? "inline-block" : "none";
+            btnNo.style.display = q.type === "yn" ? "inline-block" : "none";
+            answerInput.value = '';
+            yesScale = 1;
+            btnYes.style.transform = `scale(${yesScale})`;
+            modalQuestion.classList.add('show');
+            bgMusic.play().catch(() => { });
+        }
+
+        function openLetterFromQuestion() {
+            modalQuestion.classList.remove('show');
+            setTimeout(() => { modalLetter.classList.add('show'); typeWriter(message, typedText); }, 400);
+        }
+
+        // mở khi nhấn trái tim hoặc mở ngay
+        function openQuestion() {
+            if (isOpen) return;
+            isOpen = true;
+            flap.style.transform = 'rotateX(180deg)';
+            setTimeout(() => { showQuestion(); }, 500);
+        }
+
+        envelope.addEventListener('click', openQuestion);
+        heartBtn.addEventListener('click', () => { openQuestion(); });
+        openNow.addEventListener('click', () => { openQuestion(); });
+
+        // xử lý nút trả lời
+        btnYes.addEventListener('click', () => { openLetterFromQuestion(); });
+        btnNo.addEventListener('click', () => {
+            // Hiệu ứng nút "Có" to lên khi nhấn "Không"
+            yesScale += 0.2;
+            btnYes.style.transform = `scale(${yesScale})`;
+        });
+        btnSend.addEventListener('click', () => {
+            if (answerInput.value.trim() !== "") {
+                openLetterFromQuestion();
+            } else { alert("Hãy nhập câu trả lời!"); }
+        });
+
+        // nút cuối
+        document.getElementById('btnRead').addEventListener('click', () => { 
+            // Đã thay đổi: Nội dung thông báo
+            modalLetter.classList.remove('show');
+            alert('Cảm ơn Nhàn đã đọc thư! Chúc mừng 20/10!');
+        });
+        document.getElementById('btnSkip').addEventListener('click', () => { 
+            // Đã thay đổi: Nội dung thông báo
+            typedText.textContent = 'Cảm ơn em đã đọc! Chúc em ngày 20/10 thật vui vẻ!'; 
+        });
+
+        // hoa lá rơi
+        (function leaves() {
+            for (let i = 0; i < 40; i++) {
+                const leaf = document.createElement('div'); leaf.className = 'falling-leaf';
+                leaf.textContent = Math.random() > 0.5 ? '🌸' : '🍃';
+                leaf.style.left = Math.random() * window.innerWidth + 'px';
+                leaf.style.top = Math.random() * -100 + 'px';
+                leaf.style.fontSize = (12 + Math.random() * 18) + 'px';
+                document.body.appendChild(leaf);
+                animateLeaf(leaf);
+            }
+            function animateLeaf(el) {
+                let x = parseFloat(el.style.left), y = parseFloat(el.style.top);
+                let speedY = 1 + Math.random() * 2, speedX = Math.random() - 0.5, rot = 0, rotV = (Math.random() - 0.5) * 2;
+                function frame() {
+                    y += speedY; x += speedX; rot += rotV;
+                    el.style.top = y + 'px'; el.style.left = x + 'px'; el.style.transform = 'rotate(' + rot + 'deg)';
+                    if (y > window.innerHeight + 50) { y = -50; x = Math.random() * window.innerWidth; }
+                    requestAnimationFrame(frame);
+                } frame();
+            }
+        })();
+    </script>
+</body>
+
+</html>
