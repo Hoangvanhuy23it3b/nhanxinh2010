@@ -350,16 +350,16 @@
     <div class="bottom-decoration"></div>
 
     <script>
-        // Đã thay đổi: Nội dung thư CHÂN THÀNH, TINH TẾ cho mối quan hệ đang tìm hiểu
+        // Đã thay đổi: Xưng hô từ 'Anh' sang 'Huy'
         const message = `Gửi Nhàn,
         
-Nhân dịp 20/10, Anh gửi lời chúc tốt đẹp nhất đến em. Chúc em luôn vui vẻ, tràn đầy năng lượng, gặp nhiều may mắn và thành công trong công việc.
+Nhân dịp 20/10, Huy gửi lời chúc tốt đẹp nhất đến Nhàn. Chúc Nhàn luôn vui vẻ, tràn đầy năng lượng, gặp nhiều may mắn và thành công trong công việc cũng như cuộc sống.
 
-Anh trân trọng những khoảnh khắc tụi mình đã chia sẻ và những điều tốt đẹp mà em đã mang lại. Hãy cứ là Nhàn nhẹ nhàng, đáng yêu như thế nhé.
+Huy rất trân trọng những khoảnh khắc tụi mình đã chia sẻ và những điều tốt đẹp mà Nhàn đã mang lại. Hãy cứ là Nhàn nhẹ nhàng, đáng yêu như thế nhé.
 
-Hy vọng những điều tốt đẹp nhất sẽ đến với em!
+Hy vọng những điều tốt đẹp nhất sẽ đến với Nhàn!
 
-Thân gửi từ Anh.`;
+Thân gửi từ Huy.`;
 
         function typeWriter(text, el, speed = 24) {
             el.textContent = '';
@@ -390,12 +390,14 @@ Thân gửi từ Anh.`;
         const bgMusic = document.getElementById('bgMusic');
         let isOpen = false, yesScale = 1;
 
-        // Đã thay đổi: Câu hỏi phù hợp với mối quan hệ đang tìm hiểu
+        // Đã thay đổi: Câu hỏi sử dụng xưng hô mới
         const questions = [
             { text: "Nhàn thấy lời chúc này có dễ thương không?", type: "yn" },
-            { text: "Nhàn muốn gửi một lời cảm ơn/lời nhắn lại cho Anh không?", type: "input" },
+            // Đã thay đổi 'Anh' thành 'Huy'
+            { text: "Nhàn muốn gửi một lời cảm ơn/lời nhắn lại cho Huy không?", type: "input" }, 
             { text: "Nhàn có thấy bất ngờ với món quà này không?", type: "yn" },
-            { text: "Gửi một lời chúc lại cho Anh:", type: "input" }
+            // Đã thay đổi 'Anh' thành 'Huy'
+            { text: "Gửi một lời chúc lại cho Huy:", type: "input" } 
         ];
 
         function showQuestion() {
@@ -444,13 +446,11 @@ Thân gửi từ Anh.`;
 
         // nút cuối
         document.getElementById('btnRead').addEventListener('click', () => { 
-            // Đã thay đổi: Nội dung thông báo
             modalLetter.classList.remove('show');
             alert('Cảm ơn Nhàn đã đọc thư! Chúc mừng 20/10!');
         });
         document.getElementById('btnSkip').addEventListener('click', () => { 
-            // Đã thay đổi: Nội dung thông báo
-            typedText.textContent = 'Cảm ơn em đã đọc! Chúc em ngày 20/10 thật vui vẻ!'; 
+            typedText.textContent = 'Cảm ơn Nhàn đã đọc! Chúc Nhàn ngày 20/10 thật vui vẻ!'; 
         });
 
         // hoa lá rơi
